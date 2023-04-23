@@ -18,5 +18,5 @@ def decodificar_cesar(cadena, rotacion):
             resultado += letra
     return resultado
 
-mensaje_cifrado = 'MyaolcxuxChzilguncwuWymul'
+mensaje_cifrado = input()
 descifrar_cesar(mensaje_cifrado)
