@@ -1,9 +1,9 @@
 def descifrar_cesar(cadena):
     for rotacion in range(26):
-        texto_descifrado = decodificar_cesar(cadena, rotacion)
+        texto_descifrado = rotacion_cesar(cadena, rotacion)
         print(f'Rotación {rotacion}: {texto_descifrado}')
 
-def decodificar_cesar(cadena, rotacion):
+def rotacion_cesar(cadena, rotacion):
     alfabeto = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
     resultado = ''
     for letra in cadena:
@@ -18,5 +18,20 @@ def decodificar_cesar(cadena, rotacion):
             resultado += letra
     return resultado
 
-mensaje_cifrado = input()
-descifrar_cesar(mensaje_cifrado)
+print('Escribe un string y pulsa ENTER')
+cadena = input()
+
+print('Codificador Cesar')
+print('0. Codificar')
+print('1. Decodificar')
+print('Escribe una opción (0/1) y pulsa ENTER')
+option = int(input())
+
+if option==0:
+    print('Escribe el numero de rotacion N')
+    rot = int(input()) * -1
+    print(rotacion_cesar(cadena, rot))
+elif option==1:
+    descifrar_cesar(cadena)
+else:
+    print("ERROR: Opción distinta de 0 ó 1")
